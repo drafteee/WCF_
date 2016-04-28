@@ -1,5 +1,0 @@
-C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\WcfChatPost\bin\Debug\WcfChatPost.dll.config
-C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\WcfChatPost\bin\Debug\WcfChatPost.dll
-C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\WcfChatPost\bin\Debug\WcfChatPost.pdb
-C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\WcfChatPost\obj\Debug\WcfChatPost.dll
-C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\WcfChatPost\obj\Debug\WcfChatPost.pdb
