@@ -17,20 +17,76 @@ namespace ChatClient
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private ChannelFactory<IChatService> remoteFactory;
-        private IChatService remoteProxy;
+            btnRoom.Enabled = false;
+            btnSend.Enabled = false;
+        }   
         private ChatUser clientUser;
         private bool isConnected = false;
-        private RealizationCallback realization = new RealizationCallback();
+        public RealizationCallback realization = new RealizationCallback();
+        private Dictionary<string, List<string>> oldMessages = new Dictionary<string, List<string>>();
+
 
         private void InsertMessage(ChatMessage message)
         {
             StringBuilder builder = new StringBuilder();
-            tbChat.Text += builder.AppendFormat("\n{0} says ({1}):\n{2}\n", message.User, message.Date, message.Message).ToString();
+            this.tbChat.BeginInvoke(new Action(() => { tbChat.AppendText(builder.AppendFormat("{0} says ({1}):{2}" + Environment.NewLine, message.User.UserName, message.Date, message.Message).ToString()); }));    
         }
+        private void UpdateMSG(List<ChatMessage> listMessages)
+        {
+            
+            if (listMessages != null)
+            {
+                foreach (var message in listMessages)
+                {
+                    InsertMessage(message);
+                }
+            }              
+        }
+        public void UpdateRooms(List<ChatRoom> listRooms)
+        {
+            if (listRooms.Count > 1)
+                tbn_ExitRoom.Enabled = true;
+            else
+                tbn_ExitRoom.Enabled = false;
 
+            bool flag = false;
+            object value = null;
+
+            foreach (ChatRoom room in listRooms)
+            {
+                if (!lbRooms.Items.Contains(room.NameRoom))
+                    lbRooms.Items.Add(room.NameRoom);
+
+
+                foreach (var roo in lbRooms.Items)
+                    if (roo.ToString() == room.NameRoom)
+                    {
+                        flag = true;
+                       
+                    }
+                    else
+                    {
+                        flag = false;
+                        value = roo;
+                    }
+                
+            }
+            if (!flag)
+            {
+                lbRooms.Items.Remove(value);
+            }
+            if (label1.Text == "")
+            {
+                label1.Text = lbRooms.Items[lbRooms.Items.Count-1].ToString();
+                lbRooms.SelectedIndex = lbRooms.Items.Count-1;
+            }
+        }
+        public void UpdateUsers(List<ChatUser> listUsers)
+        {
+            foreach (ChatUser user in listUsers)
+                if (!lbUsers.Items.Contains(user.UserName))
+                    lbUsers.Items.Add(user.UserName);            
+        }
         private bool ConfirmUser(ChatUser ourName)
         {
             Confirm confirm = new Confirm(ourName);
@@ -39,17 +95,19 @@ namespace ChatClient
             return confirm.GetFlag();
         }
 
+        ChatRoom UpdateRoom()
+        {
+            return new ChatRoom() { NameRoom = label1.Text };
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             realization = new RealizationCallback();
 
             realization.delConfirmUser += new DelegateOfConfirmUser(ConfirmUser);
-           // realization.GotUserToAddEvent += new GotUserToAddDelegate(AddUserToUsersList);
-            // realization.GotUserToDeleteEvent += new GotUserToDeleteDelegate(DeleteUserFromUsersList);
-            // realization.GotRoomAddEvent += new GotRoomAddDelegate(AddAllUsersToUsersList);
-            // realization.GotRoomDeleteEvent += new GotRoomDeleteDelegate(AddRoomToTabControl);
-            // realization.GotRoomEnterEvent += new GotRoomEnterDelegate(AddRoomToTabControl);
-            // realization.GotUpdateEvent += new GotUpdateDelegate(AddRoomToTabControl);
+            realization.delUpdateUsers += new DelegateOfUpdateUsers(UpdateUsers);
+            realization.delUpdateRooms += new DelegateOfUpdateRooms(UpdateRooms);
+            realization.delUpdateMsg += new DelegateOfUpdateMessages(UpdateMSG);
+            realization.delUpdateRoom += new DelegateOfUpdateRoom(UpdateRoom);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,9 +119,9 @@ namespace ChatClient
                     Date = DateTime.Now,
                     Message = "Adios",
                     User = clientUser,
-                }, remoteProxy);
+                },new ChatRoom() { NameRoom = label1.Text });
 
-                realization.RemoveUser(clientUser, remoteProxy);
+                realization.RemoveUser(clientUser);
             }
         }
 
@@ -78,12 +136,11 @@ namespace ChatClient
                     User = clientUser,
                 };
 
-                realization.SendNewMessage(newMessage, remoteProxy);
+                realization.SendNewMessage(newMessage, new ChatRoom() { NameRoom=label1.Text});
                 InsertMessage(newMessage);
                 tbInputMsg.Text = String.Empty;
             }
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -93,18 +150,16 @@ namespace ChatClient
 
                 if (!String.IsNullOrEmpty(loginDialog.UserName))
                 {
-                    InstanceContext instanceContext = new InstanceContext(new RealizationCallback());
-
-                    remoteFactory = new DuplexChannelFactory<IChatService>(instanceContext, "ChatConfig");
-                     remoteProxy = remoteFactory.CreateChannel();
                     clientUser = new ChatUser();
-                    clientUser = realization.ClientConnect(loginDialog.UserName, remoteProxy);
+                    clientUser = realization.ClientConnect(loginDialog.UserName);
 
                     if (clientUser != null)
                     {
-                        timUpdateMsg.Enabled = true;
-                        timUpdateUsers.Enabled = true;
+                        btnRoom.Enabled = true;
+                        btnSend.Enabled = true;
                         isConnected = true;
+                        btnLogin.Enabled = false;
+                        btn_AddUser.Enabled = true;
                     }
                 }
             }
@@ -114,30 +169,81 @@ namespace ChatClient
             }
         }
 
-        private void timUpdateMsg_Tick(object sender, EventArgs e)
+        private void CreateRoom(ListUsers formUsers)
         {
-            List<ChatMessage> listMessages = realization.GetNewMessages(clientUser, remoteProxy);
-            if (listMessages != null)
+            Task t = Task.Run(() =>
             {
-                foreach (var message in listMessages)
+                if (realization.CreateNewRoom(clientUser, formUsers.GetName(), formUsers.GetNameRoom()))
                 {
-                    InsertMessage(message);
+                    this.lbRooms.BeginInvoke(new Action(() => { lbRooms.Items.Add(formUsers.GetNameRoom().NameRoom); }));
+
+                    this.lbRooms.BeginInvoke(new Action(() => { lbRooms.SelectedIndex = lbRooms.Items.Count-1; }));
+                }
+                this.btnRoom.BeginInvoke(new Action(() => { btnRoom.Enabled = true; }));
+            });
+
+        }
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            btnRoom.Enabled = false;
+            ListUsers formUsers = new ListUsers(lbUsers);
+            formUsers.ShowDialog(this);
+            if (formUsers.GetFlag())
+                CreateRoom(formUsers);
+        }
+
+        private List<string> GetListMSG()
+        {
+            return tbChat.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        }
+        private void SetListMSG(List<string> list)
+        {
+            if (list != null)
+            {
+                foreach (var message in list)
+                {
+                    tbChat.Text += message + Environment.NewLine;
                 }
             }
         }
-
-        private void timUpdateUsers_Tick(object sender, EventArgs e)
+        private void lbRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<ChatUser> listUsers = realization.GetAllUsers(remoteProxy);
-            lbUsers.DataSource = listUsers;
+
+            if (label1.Text != lbRooms.SelectedItem.ToString())
+            {
+
+                if ((oldMessages.Count == 0) || (!oldMessages.ContainsKey(label1.Text)))
+                {
+                    if (oldMessages.Count == 0)
+                    {
+                        oldMessages.Add(label1.Text, GetListMSG());
+                        tbChat.Text = "";
+                    }
+                    else
+                        oldMessages.Add(label1.Text, GetListMSG());
+                    
+                    label1.Text = lbRooms.SelectedItem.ToString();
+                }
+                else
+                {
+                    oldMessages[label1.Text] = GetListMSG();
+                    tbChat.Text = "";
+                    label1.Text = lbRooms.SelectedItem.ToString();
+                    SetListMSG(oldMessages[label1.Text]);
+                }
+
+            }
         }
 
-        private void btnRoom_Click(object sender, EventArgs e)
+        private void tbn_ExitRoom_Click(object sender, EventArgs e)
         {
-            ListUsers formUsers = new ListUsers(remoteProxy);
-            formUsers.ShowDialog(this);
+            realization.ExitRoom(clientUser,UpdateRoom());
+            lbRooms.SelectedIndex = 0;
+        }
 
-            realization.CreateNewRoom(clientUser,formUsers.GetName(),formUsers.GetNameRoom(),remoteProxy);
+        private void btn_AddUser_Click(object sender, EventArgs e)
+        {
+            realization.AddInRoom(new ChatUser() { UserName = lbUsers.SelectedItem.ToString() },clientUser,UpdateRoom());
         }
     }
 }

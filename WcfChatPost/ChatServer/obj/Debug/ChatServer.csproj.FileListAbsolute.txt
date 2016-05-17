@@ -6,3 +6,11 @@ C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\ChatServer\bin\Debug\Wcf
 C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\ChatServer\obj\Debug\ChatServer.csprojResolveAssemblyReference.cache
 C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\ChatServer\obj\Debug\ChatServer.exe
 C:\My Documents\Visual Studio 2015\Projects\WcfChatPost\ChatServer\obj\Debug\ChatServer.pdb
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\bin\Debug\ChatServer.exe.config
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\bin\Debug\ChatServer.exe
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\bin\Debug\ChatServer.pdb
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\bin\Debug\WcfChatPost.dll
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\bin\Debug\WcfChatPost.pdb
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\obj\Debug\ChatServer.csprojResolveAssemblyReference.cache
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\obj\Debug\ChatServer.exe
+C:\My Documents\GitHub\WCF_\WcfChatPost\ChatServer\obj\Debug\ChatServer.pdb

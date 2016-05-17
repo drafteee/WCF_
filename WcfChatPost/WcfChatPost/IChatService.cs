@@ -12,7 +12,7 @@ namespace WcfChatPost
     {
         [OperationContract(IsOneWay = false)]
         bool ConfirmUser(ChatUser ourName);
-        [OperationContract(IsOneWay = true)]
+        [OperationContract(IsOneWay =true)]
         void CreateRoom(ChatUser ourName, ChatUser requiredName, ChatRoom nameRoom);
     }
 
@@ -24,24 +24,29 @@ namespace WcfChatPost
         ChatUser ClientConnect(string userName);
 
         [OperationContract(IsOneWay = false)]
-        List<ChatUser> GetAllUsers();
+        ChatUser[] GetAllUserss();
 
         [OperationContract(IsOneWay = true)]
         void SendNewMessage(ChatMessage newMessage);
 
         [OperationContract(IsOneWay = true)]
         void RemoveUser(ChatUser user);
-        [OperationContract(IsOneWay = false)]
-        bool CreateNewRoom(ChatUser ourName, ChatUser name, ChatRoom nameRoom);
 
+        [OperationContract]
+        ChatMessage[] GetNewMessagess(ChatUser user);
+
+        [OperationContract]
+        bool CreateNewRoom(ChatUser ourName, string[] users, ChatRoom nameRoom);
+
+        [OperationContract]
+        ChatRoom[] GetRooms(ChatUser user);
     }
-
 
     [DataContract]
     public class ChatRoom
     {
         private string nameRoom;
-
+        [DataMember]
         public string NameRoom
         {
             get
@@ -56,38 +61,10 @@ namespace WcfChatPost
         }
     }
     [DataContract]
-    public class ChatUser
+    public class ChatUser: IEquatable<ChatUser>
     {
-        
-        private string userName, ipAddress, hostName;
 
-        [DataMember]
-        public string HostName
-        {
-            get
-            {
-                return hostName;
-            }
-
-            set
-            {
-                hostName = value;
-            }
-        }
-
-        [DataMember]
-        public string IpAddress
-        {
-            get
-            {
-                return ipAddress;
-            }
-
-            set
-            {
-                ipAddress = value;
-            }
-        }
+        private string userName;
 
         [DataMember]
         public string UserName
@@ -100,6 +77,19 @@ namespace WcfChatPost
             set
             {
                 userName = value;
+            }
+        }
+
+
+        public bool Equals(ChatUser other)
+        {
+            if (this.UserName == other.UserName)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

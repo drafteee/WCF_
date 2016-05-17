@@ -35,12 +35,6 @@
   <wsdl:message name="IChatService_SendNewMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendNewMessage" />
   </wsdl:message>
-  <wsdl:message name="IChatService_GetNewMessages_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessages" />
-  </wsdl:message>
-  <wsdl:message name="IChatService_GetNewMessages_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetNewMessagesResponse" />
-  </wsdl:message>
   <wsdl:message name="IChatService_RemoveUser_InputMessage">
     <wsdl:part name="parameters" element="tns:RemoveUser" />
   </wsdl:message>
@@ -70,10 +64,6 @@
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendNewMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/SendNewMessage" message="tns:IChatService_SendNewMessage_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetNewMessages">
-      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/GetNewMessages" message="tns:IChatService_GetNewMessages_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/GetNewMessagesResponse" message="tns:IChatService_GetNewMessages_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RemoveUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IChatService/RemoveUser" message="tns:IChatService_RemoveUser_InputMessage" />
@@ -116,15 +106,6 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="GetNewMessages">
-      <soap12:operation soapAction="http://tempuri.org/IChatService/GetNewMessages" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RemoveUser">
       <soap12:operation soapAction="http://tempuri.org/IChatService/RemoveUser" style="document" />

@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WcfChatPost.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:WcfChatPost.Fakes.ShimChatEngine">
+            <summary>Тип оболочки совместимости для WcfChatPost.ChatEngine</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatEngine.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatEngine.#ctor(WcfChatPost.ChatEngine)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AddNewChatUserChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.AddNewChatUser(ChatUser newuser)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AddNewMessageChatMessage">
+            <summary>Задает оболочка совместимости ChatEngine.AddNewMessage(ChatMessage newMessage)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatEngine.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.AddNewChatUserChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.AddNewChatUser(ChatUser newuser)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.AddNewMessageChatMessage">
+            <summary>Задает оболочка совместимости ChatEngine.AddNewMessage(ChatMessage newMessage)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.ConnectedUsersGet">
+            <summary>Задает оболочка совместимости ChatEngine.get_ConnectedUsers()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.ConnectedUsersSetListOfChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.set_ConnectedUsers(List`1&lt;ChatUser&gt; value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.CreateNewRoomChatUserStringArrayChatRoom">
+            <summary>Задает оболочка совместимости ChatEngine.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.GetNewMessageChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.GetNewMessage(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.GetRoomsChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.AllInstances.RemoveUserChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatEngine.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatEngine.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.ConnectedUsersGet">
+            <summary>Задает оболочка совместимости ChatEngine.get_ConnectedUsers()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.ConnectedUsersSetListOfChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.set_ConnectedUsers(List`1&lt;ChatUser&gt; value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.Constructor">
+            <summary>Задает оболочка совместимости ChatEngine.ChatEngine()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.CreateNewRoomChatUserStringArrayChatRoom">
+            <summary>Задает оболочка совместимости ChatEngine.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.GetNewMessageChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.GetNewMessage(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.GetRoomsChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatEngine.RemoveUserChatUser">
+            <summary>Задает оболочка совместимости ChatEngine.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatMessage">
+            <summary>Тип оболочки совместимости для WcfChatPost.ChatMessage</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatMessage.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatMessage.#ctor(WcfChatPost.ChatMessage)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatMessage.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.DateGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_Date()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.DateSetDateTime">
+            <summary>Задает оболочка совместимости ChatMessage.set_Date(DateTime value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.MessageGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_Message()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.MessageSetString">
+            <summary>Задает оболочка совместимости ChatMessage.set_Message(String value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.UserGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_User()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.AllInstances.UserSetChatUser">
+            <summary>Задает оболочка совместимости ChatMessage.set_User(ChatUser value)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatMessage.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatMessage.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.Constructor">
+            <summary>Задает оболочка совместимости ChatMessage.ChatMessage()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.DateGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_Date()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.DateSetDateTime">
+            <summary>Задает оболочка совместимости ChatMessage.set_Date(DateTime value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.MessageGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_Message()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.MessageSetString">
+            <summary>Задает оболочка совместимости ChatMessage.set_Message(String value)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.UserGet">
+            <summary>Задает оболочка совместимости ChatMessage.get_User()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatMessage.UserSetChatUser">
+            <summary>Задает оболочка совместимости ChatMessage.set_User(ChatUser value)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatRoom">
+            <summary>Тип оболочки совместимости для WcfChatPost.ChatRoom</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatRoom.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatRoom.#ctor(WcfChatPost.ChatRoom)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatRoom.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.AllInstances.NameRoomGet">
+            <summary>Задает оболочка совместимости ChatRoom.get_NameRoom()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.AllInstances.NameRoomSetString">
+            <summary>Задает оболочка совместимости ChatRoom.set_NameRoom(String value)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatRoom.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatRoom.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.Constructor">
+            <summary>Задает оболочка совместимости ChatRoom.ChatRoom()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.NameRoomGet">
+            <summary>Задает оболочка совместимости ChatRoom.get_NameRoom()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatRoom.NameRoomSetString">
+            <summary>Задает оболочка совместимости ChatRoom.set_NameRoom(String value)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatService">
+            <summary>Тип оболочки совместимости для WcfChatPost.ChatService</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatService.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatService.#ctor(WcfChatPost.ChatService)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatService.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.ClientConnectString">
+            <summary>Задает оболочка совместимости ChatService.ClientConnect(String userName)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.CreateNewRoomChatUserStringArrayChatRoom">
+            <summary>Задает оболочка совместимости ChatService.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.GetAllUserss">
+            <summary>Задает оболочка совместимости ChatService.GetAllUserss()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.GetNewMessagessChatUser">
+            <summary>Задает оболочка совместимости ChatService.GetNewMessagess(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.GetRoomsChatUser">
+            <summary>Задает оболочка совместимости ChatService.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.RemoveUserChatUser">
+            <summary>Задает оболочка совместимости ChatService.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.AllInstances.SendNewMessageChatMessage">
+            <summary>Задает оболочка совместимости ChatService.SendNewMessage(ChatMessage newMessage)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatService.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatService.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatService.Bind(WcfChatPost.IChatService)">
+            <summary>Привязка членов интерфейса к оболочке совместимости.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.ClientConnectString">
+            <summary>Задает оболочка совместимости ChatService.ClientConnect(String userName)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.Constructor">
+            <summary>Задает оболочка совместимости ChatService.ChatService()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.CreateNewRoomChatUserStringArrayChatRoom">
+            <summary>Задает оболочка совместимости ChatService.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.GetAllUserss">
+            <summary>Задает оболочка совместимости ChatService.GetAllUserss()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.GetNewMessagessChatUser">
+            <summary>Задает оболочка совместимости ChatService.GetNewMessagess(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.GetRoomsChatUser">
+            <summary>Задает оболочка совместимости ChatService.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.RemoveUserChatUser">
+            <summary>Задает оболочка совместимости ChatService.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatService.SendNewMessageChatMessage">
+            <summary>Задает оболочка совместимости ChatService.SendNewMessage(ChatMessage newMessage)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatUser">
+            <summary>Тип оболочки совместимости для WcfChatPost.ChatUser</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatUser.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatUser.#ctor(WcfChatPost.ChatUser)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.ShimChatUser.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.AllInstances.EqualsChatUser">
+            <summary>Задает оболочка совместимости ChatUser.Equals(ChatUser other)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.AllInstances.ToString01">
+            <summary>Задает оболочка совместимости ChatUser.ToString()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.AllInstances.UserNameGet">
+            <summary>Задает оболочка совместимости ChatUser.get_UserName()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.AllInstances.UserNameSetString">
+            <summary>Задает оболочка совместимости ChatUser.set_UserName(String value)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatUser.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatUser.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.ShimChatUser.Bind(System.IEquatable{WcfChatPost.ChatUser})">
+            <summary>Привязка членов интерфейса к оболочке совместимости.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.Constructor">
+            <summary>Задает оболочка совместимости ChatUser.ChatUser()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.EqualsChatUser">
+            <summary>Задает оболочка совместимости ChatUser.Equals(ChatUser other)</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.ToString">
+            <summary>Задает оболочка совместимости ChatUser.ToString()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.UserNameGet">
+            <summary>Задает оболочка совместимости ChatUser.get_UserName()</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.ShimChatUser.UserNameSetString">
+            <summary>Задает оболочка совместимости ChatUser.set_UserName(String value)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubChatEngine">
+            <summary>Тип заглушки WcfChatPost.ChatEngine</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatEngine.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatEngine.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatEngine.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubChatEngine</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatEngine.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatEngine.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubChatMessage">
+            <summary>Тип заглушки WcfChatPost.ChatMessage</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatMessage.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatMessage.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatMessage.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubChatMessage</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatMessage.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatMessage.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubChatRoom">
+            <summary>Тип заглушки WcfChatPost.ChatRoom</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatRoom.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatRoom.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatRoom.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubChatRoom</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatRoom.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatRoom.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubChatService">
+            <summary>Тип заглушки WcfChatPost.ChatService</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatService.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatService.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatService.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubChatService</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatService.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatService.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubChatUser">
+            <summary>Тип заглушки WcfChatPost.ChatUser</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatUser.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatUser.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatUser.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubChatUser</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatUser.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:WcfChatPost.Fakes.StubChatUser.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubChatUser.ToString">
+            <summary>Задает заглушка ChatUser.ToString()</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubChatUser.ToString01">
+            <summary>Задает stub ChatUser.ToString()</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubIChatCallback">
+            <summary>Тип заглушки WcfChatPost.IChatCallback</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatCallback.#ctor">
+            <summary>Инициализирует новый экземпляр type StubIChatCallback</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatCallback.ConfirmUserChatUser">
+            <summary>Задает stub IChatCallback.ConfirmUser(ChatUser ourName)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatCallback.CreateRoomChatUserChatUserChatRoom">
+            <summary>Задает stub IChatCallback.CreateRoom(ChatUser ourName, ChatUser requiredName, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatCallback.WcfChatPost#IChatCallback#ConfirmUser(WcfChatPost.ChatUser)">
+            <summary>Задает заглушка IChatCallback.ConfirmUser(ChatUser ourName)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatCallback.WcfChatPost#IChatCallback#CreateRoom(WcfChatPost.ChatUser,WcfChatPost.ChatUser,WcfChatPost.ChatRoom)">
+            <summary>Задает заглушка IChatCallback.CreateRoom(ChatUser ourName, ChatUser requiredName, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="T:WcfChatPost.Fakes.StubIChatService">
+            <summary>Тип заглушки WcfChatPost.IChatService</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.#ctor">
+            <summary>Инициализирует новый экземпляр type StubIChatService</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.ClientConnectString">
+            <summary>Задает stub IChatService.ClientConnect(String userName)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.CreateNewRoomChatUserStringArrayChatRoom">
+            <summary>Задает stub IChatService.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.GetAllUserss">
+            <summary>Задает stub IChatService.GetAllUserss()</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.GetNewMessagessChatUser">
+            <summary>Задает stub IChatService.GetNewMessagess(ChatUser user)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.GetRoomsChatUser">
+            <summary>Задает stub IChatService.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.RemoveUserChatUser">
+            <summary>Задает stub IChatService.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="F:WcfChatPost.Fakes.StubIChatService.SendNewMessageChatMessage">
+            <summary>Задает stub IChatService.SendNewMessage(ChatMessage newMessage)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#ClientConnect(System.String)">
+            <summary>Задает заглушка IChatService.ClientConnect(String userName)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#CreateNewRoom(WcfChatPost.ChatUser,System.String[],WcfChatPost.ChatRoom)">
+            <summary>Задает заглушка IChatService.CreateNewRoom(ChatUser ourName, String[] users, ChatRoom nameRoom)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#GetAllUserss">
+            <summary>Задает заглушка IChatService.GetAllUserss()</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#GetNewMessagess(WcfChatPost.ChatUser)">
+            <summary>Задает заглушка IChatService.GetNewMessagess(ChatUser user)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#GetRooms(WcfChatPost.ChatUser)">
+            <summary>Задает заглушка IChatService.GetRooms(ChatUser user)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#RemoveUser(WcfChatPost.ChatUser)">
+            <summary>Задает заглушка IChatService.RemoveUser(ChatUser user)</summary>
+        </member>
+        <member name="M:WcfChatPost.Fakes.StubIChatService.WcfChatPost#IChatService#SendNewMessage(WcfChatPost.ChatMessage)">
+            <summary>Задает заглушка IChatService.SendNewMessage(ChatMessage newMessage)</summary>
+        </member>
+    </members>
+</doc>

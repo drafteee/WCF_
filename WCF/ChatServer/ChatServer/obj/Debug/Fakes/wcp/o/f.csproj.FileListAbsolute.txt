@@ -1,0 +1,10 @@
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\WcfChatPost.Fakes.xml
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\WcfChatPost.Fakes.dll
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\WcfChatPost.Fakes.pdb
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\WcfChatPost.dll
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\WcfChatPost.pdb
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\b\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\o\f.csprojResolveAssemblyReference.cache
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\o\WcfChatPost.Fakes.dll
+C:\My Documents\GitHub\WCF_\WCF\ChatServer\ChatServer\obj\Debug\Fakes\wcp\o\WcfChatPost.Fakes.pdb

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnSend = new System.Windows.Forms.Button();
             this.lbUsers = new System.Windows.Forms.ListBox();
             this.tbChat = new System.Windows.Forms.TextBox();
             this.tbInputMsg = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.timUpdateMsg = new System.Windows.Forms.Timer(this.components);
-            this.timUpdateUsers = new System.Windows.Forms.Timer(this.components);
             this.btnRoom = new System.Windows.Forms.Button();
+            this.lbRooms = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbn_ExitRoom = new System.Windows.Forms.Button();
+            this.btn_AddUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSend
@@ -59,10 +60,11 @@
             // 
             // tbChat
             // 
-            this.tbChat.Location = new System.Drawing.Point(12, 12);
+            this.tbChat.Location = new System.Drawing.Point(12, 26);
             this.tbChat.Multiline = true;
             this.tbChat.Name = "tbChat";
-            this.tbChat.Size = new System.Drawing.Size(350, 212);
+            this.tbChat.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.tbChat.Size = new System.Drawing.Size(350, 198);
             this.tbChat.TabIndex = 2;
             // 
             // tbInputMsg
@@ -83,16 +85,6 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // timUpdateMsg
-            // 
-            this.timUpdateMsg.Interval = 500;
-            this.timUpdateMsg.Tick += new System.EventHandler(this.timUpdateMsg_Tick);
-            // 
-            // timUpdateUsers
-            // 
-            this.timUpdateUsers.Interval = 500;
-            this.timUpdateUsers.Tick += new System.EventHandler(this.timUpdateUsers_Tick);
-            // 
             // btnRoom
             // 
             this.btnRoom.Location = new System.Drawing.Point(521, 230);
@@ -103,11 +95,54 @@
             this.btnRoom.UseVisualStyleBackColor = true;
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             // 
+            // lbRooms
+            // 
+            this.lbRooms.FormattingEnabled = true;
+            this.lbRooms.Location = new System.Drawing.Point(586, 12);
+            this.lbRooms.Name = "lbRooms";
+            this.lbRooms.Size = new System.Drawing.Size(182, 212);
+            this.lbRooms.TabIndex = 6;
+            this.lbRooms.SelectedIndexChanged += new System.EventHandler(this.lbRooms_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 7;
+            // 
+            // tbn_ExitRoom
+            // 
+            this.tbn_ExitRoom.Enabled = false;
+            this.tbn_ExitRoom.Location = new System.Drawing.Point(586, 230);
+            this.tbn_ExitRoom.Name = "tbn_ExitRoom";
+            this.tbn_ExitRoom.Size = new System.Drawing.Size(94, 34);
+            this.tbn_ExitRoom.TabIndex = 8;
+            this.tbn_ExitRoom.Text = "Exit";
+            this.tbn_ExitRoom.UseVisualStyleBackColor = true;
+            this.tbn_ExitRoom.Click += new System.EventHandler(this.tbn_ExitRoom_Click);
+            // 
+            // btn_AddUser
+            // 
+            this.btn_AddUser.Enabled = false;
+            this.btn_AddUser.Location = new System.Drawing.Point(684, 230);
+            this.btn_AddUser.Name = "btn_AddUser";
+            this.btn_AddUser.Size = new System.Drawing.Size(84, 34);
+            this.btn_AddUser.TabIndex = 9;
+            this.btn_AddUser.Text = "AddUser";
+            this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 276);
+            this.ClientSize = new System.Drawing.Size(771, 276);
+            this.Controls.Add(this.btn_AddUser);
+            this.Controls.Add(this.tbn_ExitRoom);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbRooms);
             this.Controls.Add(this.btnRoom);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbInputMsg);
@@ -130,9 +165,11 @@
         private System.Windows.Forms.TextBox tbChat;
         private System.Windows.Forms.TextBox tbInputMsg;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Timer timUpdateMsg;
-        private System.Windows.Forms.Timer timUpdateUsers;
         private System.Windows.Forms.Button btnRoom;
+        private System.Windows.Forms.ListBox lbRooms;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button tbn_ExitRoom;
+        private System.Windows.Forms.Button btn_AddUser;
     }
 }
 

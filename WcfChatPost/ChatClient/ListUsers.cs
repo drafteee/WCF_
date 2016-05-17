@@ -13,30 +13,42 @@ namespace ChatClient
 {
     public partial class ListUsers : Form
     {
-        private ChatUser name;
+        private string[] users;
         private ChatRoom room = new ChatRoom();
-        public ListUsers(IChatService proxy)
+        private bool flag= false;
+        public ListUsers(ListBox lb)
         {
             InitializeComponent();
-            RealizationCallback realization = new RealizationCallback();
-            
-            lbUsers.DataSource = realization.GetAllUsers(proxy);
+            foreach (string user in lb.Items)
+                if (!lbUsers.Items.Contains(user))
+
+                    lbUsers.Items.Add(user);
+
         }
 
-        public ChatUser GetName()
+        public string[] GetName()
         {
-            return name;
+            return users;
         }
 
         public ChatRoom GetNameRoom()
         {
             return room;
         }
+        public bool GetFlag()
+        {
+            return flag;
+        }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            name = (ChatUser)lbUsers.SelectedItem;
+            flag = true;
+            int size = lbUsers.SelectedItems.Count;
+            users = new string[size];
+            for(int i=0;i<size ; i++)
+            {
+                users[i] = lbUsers.SelectedItems[i].ToString();
+            }
             room.NameRoom = tbNameRoom.Text;
-
             this.Close();
         }
     }

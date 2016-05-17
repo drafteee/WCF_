@@ -33,12 +33,6 @@ namespace ChatClient.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChatService/SendNewMessage")]
         System.Threading.Tasks.Task SendNewMessageAsync(WcfChatPost.ChatMessage newMessage);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetNewMessages", ReplyAction="http://tempuri.org/IChatService/GetNewMessagesResponse")]
-        WcfChatPost.ChatMessage[] GetNewMessages(WcfChatPost.ChatUser user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/GetNewMessages", ReplyAction="http://tempuri.org/IChatService/GetNewMessagesResponse")]
-        System.Threading.Tasks.Task<WcfChatPost.ChatMessage[]> GetNewMessagesAsync(WcfChatPost.ChatUser user);
-        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IChatService/RemoveUser")]
         void RemoveUser(WcfChatPost.ChatUser user);
         
@@ -112,14 +106,6 @@ namespace ChatClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task SendNewMessageAsync(WcfChatPost.ChatMessage newMessage) {
             return base.Channel.SendNewMessageAsync(newMessage);
-        }
-        
-        public WcfChatPost.ChatMessage[] GetNewMessages(WcfChatPost.ChatUser user) {
-            return base.Channel.GetNewMessages(user);
-        }
-        
-        public System.Threading.Tasks.Task<WcfChatPost.ChatMessage[]> GetNewMessagesAsync(WcfChatPost.ChatUser user) {
-            return base.Channel.GetNewMessagesAsync(user);
         }
         
         public void RemoveUser(WcfChatPost.ChatUser user) {

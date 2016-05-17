@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "ChatServer\ChatServer.csproj", "{2607308B-D18B-4F85-B3EA-875A12B64422}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{1E0BBB57-F3CC-4307-8D45-FB06B1894E5D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64770DF0-7912-4110-878A-AA1DD0B99D86} = {64770DF0-7912-4110-878A-AA1DD0B99D86}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

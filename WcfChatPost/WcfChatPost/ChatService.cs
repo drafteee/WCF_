@@ -7,7 +7,7 @@ using System.Text;
 
 namespace WcfChatPost
 {
-    [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Reentrant)]
+    [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single,IncludeExceptionDetailInFaults =true)]
     public class ChatService : IChatService
     {
         private ChatEngine mainEngine = new ChatEngine();
@@ -16,14 +16,15 @@ namespace WcfChatPost
             return mainEngine.AddNewChatUser(new ChatUser() { UserName = userName });
         }
 
-        public List<ChatMessage> GetNewMessages(ChatUser user)
+        public ChatMessage[] GetNewMessagess(ChatUser user)
         {
-            return mainEngine.GetNewMessage(user);
+            return mainEngine.GetNewMessage(user).ToArray();
         }
 
-        public List<ChatUser> GetAllUsers()
+        public ChatUser[] GetAllUserss()
         {
-            return mainEngine.ConnectedUsers;
+            ChatUser[] array = new ChatUser[mainEngine.ConnectedUsers.Count];
+            return mainEngine.ConnectedUsers.ToArray();
         }
 
         public void RemoveUser(ChatUser user)
@@ -36,9 +37,13 @@ namespace WcfChatPost
             mainEngine.AddNewMessage(newMessage);
         }
 
-        public bool CreateNewRoom(ChatUser ourName, ChatUser name, ChatRoom nameRoom)
+        public bool CreateNewRoom(ChatUser ourName, string[] users, ChatRoom nameRoom)
         {
-            return mainEngine.CreateNewRoom(ourName, name, nameRoom);
+            return mainEngine.CreateNewRoom(ourName, users, nameRoom);
+        }
+        public ChatRoom[] GetRooms(ChatUser user)
+        {
+            return mainEngine.GetRooms(user).ToArray();
         }
     }
 }

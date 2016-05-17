@@ -34,33 +34,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetNewMessages">
+  <xs:element name="RemoveUser">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="user" nillable="true" type="q4:ChatUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetNewMessagesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="GetNewMessagesResult" nillable="true" type="q5:ArrayOfChatMessage" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="user" nillable="true" type="q6:ChatUser" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="CreateNewRoom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q7:ChatUser" />
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="name" nillable="true" type="q8:ChatUser" />
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="nameRoom" nillable="true" type="q9:ChatRoom" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q5:ChatUser" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="name" nillable="true" type="q6:ChatUser" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="nameRoom" nillable="true" type="q7:ChatRoom" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -74,7 +60,7 @@
   <xs:element name="ConfirmUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q10:ChatUser" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q8:ChatUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -88,9 +74,9 @@
   <xs:element name="CreateRoom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q11:ChatUser" />
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="requiredName" nillable="true" type="q12:ChatUser" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="nameRoom" nillable="true" type="q13:ChatRoom" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="ourName" nillable="true" type="q9:ChatUser" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="requiredName" nillable="true" type="q10:ChatUser" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfChatPost" minOccurs="0" name="nameRoom" nillable="true" type="q11:ChatRoom" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

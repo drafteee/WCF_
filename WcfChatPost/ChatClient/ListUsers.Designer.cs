@@ -38,6 +38,7 @@
             this.lbUsers.FormattingEnabled = true;
             this.lbUsers.Location = new System.Drawing.Point(12, 12);
             this.lbUsers.Name = "lbUsers";
+            this.lbUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbUsers.Size = new System.Drawing.Size(198, 199);
             this.lbUsers.TabIndex = 0;
             // 
