@@ -72,34 +72,11 @@ namespace WcfChatPost
     public class ChatUser: IEquatable<ChatUser>
     {
 
-        private string userName;
-
         [DataMember]
-        public string UserName
-        {
-            get
-            {
-                return userName;
-            }
-
-            set
-            {
-                userName = value;
-            }
-        }
+        public string UserName { get; set; }
 
 
-        public bool Equals(ChatUser other)
-        {
-            if (this.UserName == other.UserName)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public bool Equals(ChatUser other) => UserName == other.UserName;
 
         public override string ToString()
         {

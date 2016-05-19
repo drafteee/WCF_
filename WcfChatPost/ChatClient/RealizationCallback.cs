@@ -24,6 +24,7 @@ namespace ChatClient
         public event DelegateOfUpdateRooms delUpdateRooms;
         public event DelegateOfUpdateMessages delUpdateMsg;
         public event DelegateOfUpdateRoom delUpdateRoom;
+        private Dictionary<string, List<string>> oldMessages = new Dictionary<string, List<string>>();
 
         public ChatServiceClient client;
 

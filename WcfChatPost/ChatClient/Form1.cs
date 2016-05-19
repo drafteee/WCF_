@@ -103,7 +103,7 @@ namespace ChatClient
         {
             realization = new RealizationCallback();
 
-            realization.delConfirmUser += new DelegateOfConfirmUser(ConfirmUser);
+            realization.delConfirmUser += ConfirmUser;
             realization.delUpdateUsers += new DelegateOfUpdateUsers(UpdateUsers);
             realization.delUpdateRooms += new DelegateOfUpdateRooms(UpdateRooms);
             realization.delUpdateMsg += new DelegateOfUpdateMessages(UpdateMSG);
@@ -122,6 +122,11 @@ namespace ChatClient
                 },new ChatRoom() { NameRoom = label1.Text });
 
                 realization.RemoveUser(clientUser);
+                realization.delConfirmUser -= new DelegateOfConfirmUser(ConfirmUser);
+                realization.delUpdateUsers -= new DelegateOfUpdateUsers(UpdateUsers);
+                realization.delUpdateRooms -= new DelegateOfUpdateRooms(UpdateRooms);
+                realization.delUpdateMsg -= new DelegateOfUpdateMessages(UpdateMSG);
+                realization.delUpdateRoom -= new DelegateOfUpdateRoom(UpdateRoom);
             }
         }
 
@@ -223,6 +228,8 @@ namespace ChatClient
                         oldMessages.Add(label1.Text, GetListMSG());
                     
                     label1.Text = lbRooms.SelectedItem.ToString();
+                    if(oldMessages.ContainsKey(label1.Text))
+                    SetListMSG(oldMessages[label1.Text]);
                 }
                 else
                 {
